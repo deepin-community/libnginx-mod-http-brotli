@@ -1,5 +1,39 @@
-template-repository (1.0-1) unstable; urgency=medium
+libnginx-mod-http-brotli (1.0.0~rc-5) unstable; urgency=medium
 
-  * Initial release
+  * d/control: remove Build-Depends nginx-abi-1.24.0-1
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Sat, 07 Oct 2023 15:31:24 +0200
+
+libnginx-mod-http-brotli (1.0.0~rc-4) unstable; urgency=medium
+
+  * NEW ABI: rebuild with nginx-abi-1.24.0-1
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Tue, 27 Jun 2023 23:16:35 +0200
+
+libnginx-mod-http-brotli (1.0.0~rc-3) unstable; urgency=medium
+
+  * d/watch: updated uversionmangle to be more generic
+  * d/copyright: reformat text to be compatible with 'cme update dpkg-copyright'
+  * NEW ABI: rebuild with nginx-abi-1.22.1-7
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Mon, 13 Feb 2023 12:56:11 +0100
+
+libnginx-mod-http-brotli (1.0.0~rc-2) unstable; urgency=medium
+
+  * d/t/generic rework. The test now checks module after
+    installation/reload/restart.
+  * d/control: bump Standards-Version: 4.6.2, no changes
+  * d/p/0001-Fix-Vary-header.patch added (Closes: 1028153)
+    "brotli_static on;" causes "Vary: Accept-Encoding" to be added to every
+    file (including images, ...)
+    The patch fixes the problem and adds "Vary: Accept-Encoding" only to
+    responses when brotli static compression is used.
+  * d/changelog: bump my copyright year
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Fri, 13 Jan 2023 17:45:13 +0100
+
+libnginx-mod-http-brotli (1.0.0~rc-1) unstable; urgency=medium
+
+  * Initial release. (Closes: 1025515)
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Tue, 06 Dec 2022 10:25:40 +0100
